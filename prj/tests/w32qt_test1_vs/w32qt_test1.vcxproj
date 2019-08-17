@@ -164,6 +164,7 @@
     <ClInclude Include="..\..\..\include\headers\qt_namspace.h" />
     <ClInclude Include="..\..\..\include\headers\qwidget.h" />
     <ClInclude Include="..\..\..\include\headers\qwidgetprivate.h" />
+    <ClInclude Include="..\..\..\include\headers\win32_based_qtclasses_internal.h" />
     <ClInclude Include="..\..\..\src\tests\testcontrol.h" />
     <ClInclude Include="..\..\..\src\tests\titizbutton.h" />
     <ClInclude Include="..\..\..\src\tests\titizcontrol.h" />

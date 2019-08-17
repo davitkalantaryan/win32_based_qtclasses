@@ -11,50 +11,40 @@
 
 #define		INITIAL_CNTRL_ID		5
 
-#define		DESIGNED_NUMB_OF_OBJS	1024
-#define		SMALL_TABLE_SIZE		8
-
+#include "win32_based_qtclasses_internal.h"
 #include "qobject.h"
 #include "qt_namspace.h"
-#include <vector>
+#include <list>
+
+class QWidget;
 
 class QLayout : public QObject
 {
+	friend class QWidget;
 public:
 	// Construction destruction
 	QLayout( class QWidget* parent );
-
 	QLayout();
-
 	virtual ~QLayout();
 
-	/////////////////////////////////////////////////////////////////////////
-	void						addObject ( class QObject* );
+	virtual void				addWidget ( QWidget*, int = 0, Qt::Alignment = 0 );
 
-	virtual void				addWidget ( class QWidget*, int = 0, Qt::Alignment = 0 ) = 0;
-
+protected:
 	QObject*					GetWidget( const HWND& a_hWnd )const;
-
-	virtual void				CreateAllCntrls ( );
-
-	virtual void				SetAllVisible ( );
-
+	virtual void				CreateAllWidgets ( );
+	virtual void				SetAllWidgetsVisible ( );
 	virtual UCHAR				IsVisibleProt()const;
-	
 	virtual UCHAR				IsCreatedProt()const;
-
 	virtual int					DrawItemMe( UCHAR& howCnt, DRAWITEMSTRUCT* pdis );
 	
 private:
-	virtual int					CreateProt();
-
 	virtual LRESULT CALLBACK	PreWndProc( UCHAR& howCnt, UINT message, WPARAM wParam, LPARAM lParam );
-
 	virtual LRESULT CALLBACK	PostWndProc( LRESULT lDef, UINT message, WPARAM wParam, LPARAM lParam );
 
 private:
-	WORD						m_wIndexOfCntrls;
-	std::vector<QObject*>		m_Controls;
+	WORD							m_wIndexOfCntrls;
+	::std::list<QWidget*>			m_allWidgets;
+	::std::list<QLayout*>			m_allLayouts;
 
 };
 

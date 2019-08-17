@@ -10,22 +10,13 @@
 #include "headers/qobject.h"
 
 QObject::QObject( QObject* parent )
-	:	m_pParent(parent),
-		m_hWnd(0),
-
-		m_lCntrlIndex(0)
+	:	m_pParent(parent)
 {
 }
 
 
 QObject::~QObject()
 {
-}
-
-
-const HWND& QObject::GetHWND()const
-{
-	return m_hWnd;
 }
 
 
@@ -39,10 +30,4 @@ void QObject::SetParentObj( QObject* parent )
 QObject* QObject::GetParent()const
 {
 	return m_pParent;
-}
-
-
-void QObject::SetCntrlIndex( const LONG& a_lCntrlIndex )
-{
-	m_lCntrlIndex = a_lCntrlIndex ;
 }

@@ -8,12 +8,12 @@
  */
 #include "stdafx.h"
 #include "headers/qlayout.h"
+#include "headers/qwidget.h"
 
 
-QLayout::QLayout( class QWidget* parent )
-	:	QObject( (QObject*)((void*)parent) ),
-		m_wIndexOfCntrls( INITIAL_CNTRL_ID ),
-		m_Controls(DESIGNED_NUMB_OF_OBJS)
+QLayout::QLayout( QWidget* a_parent )
+	:	QObject( a_parent ),
+		m_wIndexOfCntrls(INITIAL_CNTRL_ID)
 {
 }
 
@@ -21,8 +21,7 @@ QLayout::QLayout( class QWidget* parent )
 
 QLayout::QLayout()
 	:	QObject(0),
-		m_wIndexOfCntrls( INITIAL_CNTRL_ID ),
-		m_Controls(DESIGNED_NUMB_OF_OBJS)
+		m_wIndexOfCntrls( INITIAL_CNTRL_ID )
 {
 }
 
@@ -33,21 +32,12 @@ QLayout::~QLayout()
 }
 
 
-void QLayout::addObject ( class QObject* a_pObject )
+void QLayout::addWidget(QWidget* a_pObject, int, Qt::Alignment)
 {
-//	a_pObject->SetParentObj( a_pObject );
 	a_pObject->SetParentObj( m_pParent );
 	a_pObject->SetCntrlIndex( m_wIndexOfCntrls++ );
-	m_Controls.push_back( a_pObject );
+	m_allWidgets.push_back( a_pObject );
 }
-
-
-
-int QLayout::CreateProt()
-{
-	return 0;
-}
-
 
 
 LRESULT CALLBACK QLayout::PreWndProc( UCHAR& howCnt, UINT, WPARAM, LPARAM )
@@ -64,29 +54,32 @@ LRESULT CALLBACK QLayout::PostWndProc( LRESULT, UINT, WPARAM, LPARAM )
 
 
 
-void QLayout::CreateAllCntrls ( )
+void QLayout::CreateAllWidgets( )
 {
+	::std::list<QWidget*>::iterator itWg, itWgEnd=m_allWidgets.end();
+	::std::list<QLayout*>::iterator itLy, itLyEnd = m_allLayouts.end();
 
-	size_t unSize( m_Controls.size() );
+	for(itWg=m_allWidgets.begin(); itWg != itWgEnd;++itWg){
+		(*itWg)->CreateProt();
+	}
 
-	for( size_t i(0); i < unSize; ++i )
-	{
-		m_Controls[i]->CreateProt();
+	for (itLy = m_allLayouts.begin(); itLy != itLyEnd; ++itLy) {
+		(*itLy)->CreateAllWidgets();
 	}
 }
 
 
-void QLayout::SetAllVisible ( )
+void QLayout::SetAllWidgetsVisible( )
 {
-	//m_pHashCntrls.ClearData( QBoxLayout::CreateWin );
-	size_t unSize( m_Controls.size() );
+	QWidget* pCurWidget;
+	::std::list<QWidget*>::iterator it, itEnd = m_allWidgets.end();
 
-	for( size_t i(0); i < unSize; ++i )
-	{
-		if( m_Controls[i]->IsCreatedProt() && m_Controls[i]->IsVisibleProt() )
+	for (it = m_allWidgets.begin(); it != itEnd; ++it) {
+		pCurWidget = (*it);
+		if (pCurWidget->IsCreatedProt() && pCurWidget->IsVisibleProt())
 		{
-			ShowWindow( m_Controls[i]->GetHWND(), SW_SHOW );
-			UpdateWindow( m_Controls[i]->GetHWND() );
+			ShowWindow(pCurWidget->GetHWND(), SW_SHOW);
+			UpdateWindow(pCurWidget->GetHWND());
 		}
 	}
 }

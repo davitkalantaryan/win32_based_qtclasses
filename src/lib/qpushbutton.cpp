@@ -35,8 +35,12 @@ QPushButton::~QPushButton()
 
 int QPushButton::CreateProt( )
 {
+	QWidget* pParentWidget = dynamic_cast<QWidget*>(m_pParent);
+	HWND aParWnd = NEWNULLPTR2;
 
-	HWND aParWnd = m_pParent ? m_pParent->GetHWND() : 0;
+	if(pParentWidget){
+		aParWnd = pParentWidget->GetHWND();
+	}
 
 	//// Piti lock arvi
 	//QApplication::SetObjCreating( this );

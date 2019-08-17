@@ -9,6 +9,7 @@
 #ifndef WIN32_BASED_QTCLASSES_QBOXLAYOUT_H
 #define WIN32_BASED_QTCLASSES_QBOXLAYOUT_H
 
+#include "win32_based_qtclasses_internal.h"
 #include "qlayout.h"
 
 class QBoxLayout : public QLayout
@@ -18,10 +19,9 @@ public:
 
 public:
 	QBoxLayout( Direction dir, class QWidget* parent = 0 );
-
 	virtual ~QBoxLayout();
 
-	virtual void addWidget ( QWidget* widget, int stretch = 0, Qt::Alignment alignment = 0 );
+	virtual void addWidget ( QWidget* widget, int stretch = 0, Qt::Alignment alignment = 0 ) OVERRIDE2;
 
 };
 

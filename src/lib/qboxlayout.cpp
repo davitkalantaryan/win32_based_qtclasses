@@ -13,7 +13,7 @@
 #include "headers/qapplication.h"
 
 
-QBoxLayout::QBoxLayout( Direction dir, class QWidget* parent )
+QBoxLayout::QBoxLayout( Direction dir, QWidget* parent )
 	:	QLayout(parent)
 {
 }
@@ -24,36 +24,29 @@ QBoxLayout::~QBoxLayout( )
 }
 
 
-void QBoxLayout::addWidget ( QWidget* widget, int stretch, Qt::Alignment alignment )
+void QBoxLayout::addWidget ( QWidget* a_widget, int a_stretch, Qt::Alignment a_alignment )
 {
-
-	QLayout::addObject( widget );
-
-
-	//////////////////////////////////////////////////////////////
-	QWidget* pwParent = (QWidget*)m_pParent;
-
+	QLayout::addWidget(a_widget);
 	
-	if( pwParent && pwParent->IsCreatedProt() )
+	if( m_pParent && m_pParent->IsCreatedProt() )
 	{
 		
-		if( widget->IsCreatedProt() )
-		{
-			SetParent( widget->GetHWND(), pwParent->GetHWND() );
-			UpdateWindow( widget->GetHWND() );
+		if(a_widget->IsCreatedProt() ){
+			QWidget* pParentWidget = dynamic_cast<QWidget*>(m_pParent);
+			if(pParentWidget){ // this means we have QWidget
+				SetParent(a_widget->GetHWND(), pParentWidget->GetHWND());
+			}
+			UpdateWindow(a_widget->GetHWND());
 		}
-		else
-		{
-			widget->CreateProt();			
+		else{
+			a_widget->CreateProt();
 		}
 
 
 	}
 	else
 	{
-		DestroyWindow( widget->GetHWND() );
+		DestroyWindow(a_widget->GetHWND() );
 	}
 
-
 }
-

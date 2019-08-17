@@ -101,6 +101,9 @@
     <ClInclude Include="..\..\..\src\tests\titizcontrol.h">
       <Filter>Header Files\src-test</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\win32_based_qtclasses_internal.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\include\QApplication">
