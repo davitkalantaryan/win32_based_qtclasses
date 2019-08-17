@@ -1,0 +1,14 @@
+/*
+ * File:			QApplication
+ * Created on:		2016 Nov 8
+ * Created by:		Davit Kalantaryan (davit.kalantaryan@gmail.com)
+ *
+ * Last modified:	2019 Aug 17
+ *
+ */
+#ifndef WIN32_BASED_QTCLASSES_QAPPLICATION
+#define WIN32_BASED_QTCLASSES_QAPPLICATION
+
+#include "headers/qapplication.h"
+
+#endif  // #ifndef WIN32_BASED_QTCLASSES_QAPPLICATION

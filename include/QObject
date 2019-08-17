@@ -1,0 +1,14 @@
+/*
+ * File:			QObject
+ * Created on:		2016 Nov 8
+ * Created by:		Davit Kalantaryan (davit.kalantaryan@gmail.com)
+ *
+ * Last modified:	2019 Aug 17
+ *
+ */
+#ifndef WIN32_BASED_QTCLASSES_QOBJECT
+#define WIN32_BASED_QTCLASSES_QOBJECT
+
+#include "headers/qobject.h"
+
+#endif // #ifndef WIN32_BASED_QTCLASSES_QOBJECT

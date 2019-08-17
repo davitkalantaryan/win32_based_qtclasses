@@ -1,0 +1,14 @@
+/*
+ * File:			QDialog
+ * Created on:		2016 Nov 8
+ * Created by:		Davit Kalantaryan (davit.kalantaryan@gmail.com)
+ *
+ * Last modified:	2019 Aug 17
+ *
+ */
+#ifndef WIN32_BASED_QTCLASSES_QDIALOG
+#define WIN32_BASED_QTCLASSES_QDIALOG
+
+#include "headers/qdialog.h"
+
+#endif  // #ifndef WIN32_BASED_QTCLASSES_QDIALOG

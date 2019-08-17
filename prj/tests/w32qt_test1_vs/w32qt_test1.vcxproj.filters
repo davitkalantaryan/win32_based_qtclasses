@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\lib-include">
+      <UniqueIdentifier>{6f5ee6a9-0390-4724-b64a-e017c44db720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lib-include\headers">
+      <UniqueIdentifier>{c27fef6a-6204-4131-b792-796d4ade2112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src-test">
+      <UniqueIdentifier>{42630e75-f832-4ffe-ac79-83c31fff8d70}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\tests\main_w32qt_test1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lib\qapplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lib\qstring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lib\qwidgetprivate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lib\qobject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lib\qlayout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lib\qboxlayout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lib\qt_namspace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lib\qwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lib\qpushbutton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\lib\qabstractbutton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\headers\qabstractbutton.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\qapplication.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\qboxlayout.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\qdialog.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\qlayout.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\qobject.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\qpushbutton.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\qstring.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\qwidget.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\qwidgetprivate.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\headers\qt_namspace.h">
+      <Filter>Header Files\lib-include\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\tests\testcontrol.h">
+      <Filter>Header Files\src-test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\tests\titizbutton.h">
+      <Filter>Header Files\src-test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\tests\titizcontrol.h">
+      <Filter>Header Files\src-test</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\include\QApplication">
+      <Filter>Header Files\lib-include</Filter>
+    </None>
+    <None Include="..\..\..\include\QDialog">
+      <Filter>Header Files\lib-include</Filter>
+    </None>
+    <None Include="..\..\..\include\QObject">
+      <Filter>Header Files\lib-include</Filter>
+    </None>
+    <None Include="..\..\..\include\QPushButton">
+      <Filter>Header Files\lib-include</Filter>
+    </None>
+    <None Include="..\..\..\include\QString">
+      <Filter>Header Files\lib-include</Filter>
+    </None>
+    <None Include="..\..\..\include\QWidget">
+      <Filter>Header Files\lib-include</Filter>
+    </None>
+  </ItemGroup>
+</Project>
